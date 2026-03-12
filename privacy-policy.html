@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — MeatGrinder</title>
+    <title>Privacy Policy — MG Trading Terminal</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -16,6 +16,7 @@
         h1 { color: #fff; font-size: 32px; margin-bottom: 8px; }
         .updated { color: #666; font-size: 14px; margin-bottom: 40px; }
         h2 { color: #fff; font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+        h3 { color: #ddd; font-size: 17px; margin-top: 20px; margin-bottom: 8px; }
         p { margin-bottom: 16px; color: #999; }
         ul { margin: 0 0 16px 24px; color: #999; }
         li { margin-bottom: 8px; }
@@ -26,54 +27,95 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back">&larr; Back to MeatGrinder</a>
+        <a href="index.html" class="back">&larr; Back to MG Trading Terminal</a>
         <h1>Privacy Policy</h1>
         <p class="updated">Last updated: March 12, 2026</p>
 
-        <h2>Overview</h2>
-        <p>MeatGrinder ("the App") is a crypto futures analysis terminal developed by MeatGrinder. Your privacy is important to us. This policy explains what data the App collects, how it is used, and your rights.</p>
+        <h2>1. Overview</h2>
+        <p>MG Trading Terminal ("the App") is a crypto futures analysis terminal. Your privacy is important to us. This policy explains what data the App collects, how it is used, and your rights.</p>
 
-        <h2>Data Collection</h2>
-        <p><strong>We do not collect, store, or transmit any personal data to our servers.</strong> The App has no backend servers, no analytics, and no tracking.</p>
+        <h2>2. Data Collection</h2>
+        <p><strong>We do not collect, store, or transmit any personal data to our servers.</strong> The App has no backend servers, no analytics, and no tracking. We have no way to identify you or access your data.</p>
 
-        <h2>Data Stored on Your Device</h2>
+        <h2>3. Data Stored on Your Device</h2>
         <p>The following data is stored locally on your device only:</p>
         <ul>
             <li><strong>API Keys</strong> — Your Bybit API credentials are stored in the iOS Keychain (hardware-encrypted secure storage). They are used solely to communicate directly with the Bybit exchange API.</li>
-            <li><strong>App Settings</strong> — Your preferences (display settings, risk parameters) are stored locally using standard iOS storage.</li>
+            <li><strong>App Settings</strong> — Your preferences (display settings, risk parameters) are stored locally using standard iOS storage (UserDefaults).</li>
+            <li><strong>Subscription Status</strong> — Your subscription state is verified locally on-device via Apple StoreKit. No subscription data is sent to our servers.</li>
         </ul>
         <p>This data never leaves your device and is not accessible to us or any third party.</p>
+        <p><strong>Data Retention:</strong> All data persists on your device until you delete the App or manually remove it through the App's settings. There is no server-side data retention as we do not collect any data.</p>
 
-        <h2>Network Communication</h2>
+        <h2>4. Network Communication</h2>
         <p>The App communicates directly with:</p>
         <ul>
             <li><strong>Bybit API</strong> (api.bybit.com) — to fetch market data, account information, and execute trades on your behalf using your API keys.</li>
             <li><strong>Binance API</strong> (fapi.binance.com) — to fetch supplementary market data (klines with taker volume) for analysis purposes only. No authentication or personal data is sent.</li>
             <li><strong>Alternative.me API</strong> — to fetch the Fear &amp; Greed Index. No personal data is sent.</li>
+            <li><strong>Apple App Store</strong> — to verify subscription status and process in-app purchases via StoreKit. This is handled entirely by the iOS operating system.</li>
         </ul>
         <p>All network communication uses encrypted HTTPS/WSS connections. No data is routed through our servers.</p>
 
-        <h2>Third-Party Services</h2>
+        <h2>5. Third-Party Services</h2>
         <p>The App does not integrate any third-party analytics, advertising, or tracking SDKs. There are no cookies, no fingerprinting, and no user profiling.</p>
-
-        <h2>Data Sharing</h2>
-        <p>We do not share, sell, or transfer any user data to third parties. We have no access to your data.</p>
-
-        <h2>Data Deletion</h2>
-        <p>All data is stored locally on your device. To delete all App data:</p>
+        <p>The third-party APIs listed above (Bybit, Binance, Alternative.me) have their own privacy policies. We encourage you to review them:</p>
         <ul>
-            <li>Delete the App from your device — this removes all stored settings and Keychain entries.</li>
-            <li>Alternatively, use the "Disconnect" option in Settings to remove your API keys.</li>
+            <li><a href="https://www.bybit.com/en/privacy-policy">Bybit Privacy Policy</a></li>
+            <li><a href="https://www.binance.com/en/privacy">Binance Privacy Policy</a></li>
         </ul>
 
-        <h2>Children's Privacy</h2>
-        <p>The App is not intended for use by children under 17. We do not knowingly collect data from children.</p>
+        <h2>6. Data Sharing</h2>
+        <p>We do not share, sell, rent, or transfer any user data to third parties. We have no access to your data. The only data that leaves your device goes directly to the exchange APIs you configure and to Apple for subscription processing.</p>
 
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+        <h2>7. Data Deletion</h2>
+        <p>All data is stored locally on your device. To delete all App data:</p>
+        <ul>
+            <li><strong>Delete the App</strong> from your device — this removes all stored settings and Keychain entries.</li>
+            <li><strong>Disconnect</strong> — use the "Disconnect" option in the App's Settings to remove your API keys without deleting the App.</li>
+            <li><strong>Cancel Subscription</strong> — manage or cancel in device Settings &gt; Apple ID &gt; Subscriptions.</li>
+        </ul>
 
-        <h2>Contact</h2>
-        <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:dlchistyakov@gmail.com">dlchistyakov@gmail.com</a>.</p>
+        <h2>8. Your Rights (GDPR / CCPA / Global)</h2>
+        <p>Regardless of where you are located, you have the following rights regarding your data:</p>
+        <ul>
+            <li><strong>Right to Access</strong> — All your data is stored locally on your device and is directly accessible to you at all times.</li>
+            <li><strong>Right to Deletion</strong> — You can delete all data by removing the App or using the Disconnect feature. Since we do not store any data on our servers, there is nothing for us to delete.</li>
+            <li><strong>Right to Portability</strong> — Your API keys and settings are stored on your device and can be re-entered in any compatible application.</li>
+            <li><strong>Right to Restrict Processing</strong> — You can revoke API key access at any time through the App's settings or by revoking keys on your exchange account.</li>
+            <li><strong>Right to Object</strong> — Since we do not collect or process personal data, there is no processing to object to.</li>
+            <li><strong>Right to Non-Discrimination</strong> — We do not discriminate against users who exercise their privacy rights.</li>
+        </ul>
+        <p>Because the App stores all data locally and we have no backend servers, most traditional data subject requests are automatically satisfied by design. If you have any concerns, contact us at the email below.</p>
+
+        <h3>For EU/EEA Residents (GDPR)</h3>
+        <p>The legal basis for any minimal data processing (local device storage) is the performance of a contract (providing you the App's functionality). You have the right to lodge a complaint with your local data protection authority if you believe your rights have been violated.</p>
+
+        <h3>For California Residents (CCPA)</h3>
+        <p>We do not sell personal information. We do not collect personal information for commercial purposes. You have the right to know what personal information is collected (none, in our case), to request deletion, and to not be discriminated against for exercising your rights.</p>
+
+        <h2>9. Children's Privacy</h2>
+        <p>The App is not intended for use by anyone under 17 years of age. We do not knowingly collect data from children. The App involves cryptocurrency futures trading analysis, which is an adult financial activity.</p>
+
+        <h2>10. Security</h2>
+        <p>We take your security seriously. The App uses the following security measures:</p>
+        <ul>
+            <li>API keys are stored in the iOS Keychain with hardware encryption</li>
+            <li>All network communication uses TLS/SSL encryption (HTTPS/WSS)</li>
+            <li>No data is transmitted to or stored on our servers</li>
+            <li>The App does not request unnecessary device permissions</li>
+        </ul>
+        <p>While we implement industry-standard security practices, no method of electronic storage or transmission is 100% secure. You are responsible for maintaining the security of your device and API keys.</p>
+
+        <h2>11. International Data Transfers</h2>
+        <p>The App communicates directly with exchange APIs that may be hosted in various countries. These communications are encrypted and contain only market data requests and your exchange API credentials (sent directly to the exchange, not to us). We do not transfer any personal data internationally as we do not collect any.</p>
+
+        <h2>12. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Material changes will be communicated through the App or posted on this page with an updated revision date. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>13. Contact</h2>
+        <p>If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:dlchistyakov@gmail.com">dlchistyakov@gmail.com</a></p>
     </div>
 </body>
 </html>
