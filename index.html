@@ -13,6 +13,7 @@
     <meta name="description" content="Professional crypto futures analysis terminal for iPhone. Volume Profile, Order Flow, Smart Money Detection, AI Trading Brain. Built by traders, for traders.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        a, a:visited { color: inherit; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
             background: #0a0a0f;
@@ -22,28 +23,27 @@
         }
         .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
-        /* ---- NAV ---- */
+        /* NAV */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             background: rgba(10,10,15,0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
             padding: 14px 24px;
             display: flex; justify-content: space-between; align-items: center;
         }
         nav .logo {
             display: flex; align-items: center; gap: 10px;
-            color: #fff; font-weight: 700; font-size: 16px; text-decoration: none;
+            color: #fff; font-weight: 700; font-size: 18px; text-decoration: none;
         }
-        nav .logo img { width: 28px; height: 28px; border-radius: 7px; }
+        nav .logo img { width: 36px; height: 36px; border-radius: 9px; }
         nav .links a {
             color: #888; text-decoration: none; font-size: 14px; margin-left: 24px;
             transition: color 0.2s;
         }
         nav .links a:hover { color: #fff; }
 
-        /* ---- HERO ---- */
+        /* HERO */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
@@ -52,54 +52,45 @@
         .hero::before {
             content: '';
             position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
             pointer-events: none;
         }
         .hero-badge {
             display: inline-block;
             background: rgba(59,130,246,0.1);
             border: 1px solid rgba(59,130,246,0.2);
-            color: #3b82f6;
-            font-size: 13px; font-weight: 600;
-            padding: 6px 16px;
-            border-radius: 20px;
+            color: #3b82f6; font-size: 13px; font-weight: 600;
+            padding: 6px 16px; border-radius: 20px;
             margin-bottom: 24px;
         }
         .hero h1 {
             font-size: 52px; font-weight: 800; color: #fff;
-            line-height: 1.15; margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em;
         }
         .hero h1 span { color: #3b82f6; }
         .hero p {
             font-size: 19px; color: #888;
-            max-width: 560px; margin: 0 auto 32px;
+            max-width: 580px; margin: 0 auto 32px;
         }
         .hero-buttons {
-            display: flex; gap: 16px; justify-content: center; align-items: center;
-            flex-wrap: wrap;
+            display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;
         }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: #3b82f6; color: #fff;
-            font-size: 16px; font-weight: 600;
-            padding: 14px 28px; border-radius: 12px;
+        .btn-appstore {
+            display: inline-block; transition: opacity 0.2s, transform 0.2s;
             text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
         }
-        .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+        .btn-appstore:hover { opacity: 0.85; transform: translateY(-1px); }
+        .btn-appstore svg { height: 48px; width: auto; }
         .btn-secondary {
-            color: #888; font-size: 15px; text-decoration: none;
-            transition: color 0.2s;
+            color: #888; font-size: 15px; text-decoration: none; transition: color 0.2s;
         }
         .btn-secondary:hover { color: #fff; }
 
-        /* ---- SCREENSHOTS ---- */
+        /* SCREENSHOTS */
         .screenshots {
             padding: 40px 0 80px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
         }
         .screenshots::-webkit-scrollbar { display: none; }
         .screenshots-inner {
@@ -108,162 +99,162 @@
         .screenshots img {
             height: 520px; border-radius: 20px;
             box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-            flex-shrink: 0;
-            transition: transform 0.3s;
+            flex-shrink: 0; transition: transform 0.3s;
         }
         .screenshots img:hover { transform: scale(1.02); }
 
-        /* ---- SECTION SHARED ---- */
-        .section { padding: 80px 0; }
-        .section-header {
-            text-align: center; margin-bottom: 48px;
+        /* STATS BAR */
+        .stats-bar {
+            border-top: 1px solid #1a1a2e;
+            border-bottom: 1px solid #1a1a2e;
+            padding: 40px 0;
         }
+        .stats-grid {
+            display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-number {
+            font-size: 36px; font-weight: 800; color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .stat-number span { color: #3b82f6; }
+        .stat-label { font-size: 13px; color: #666; margin-top: 4px; }
+
+        /* SECTION SHARED */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
         .section-header h2 {
             font-size: 36px; font-weight: 700; color: #fff;
             margin-bottom: 12px; letter-spacing: -0.01em;
         }
         .section-header p {
             font-size: 17px; color: #888;
-            max-width: 520px; margin: 0 auto;
+            max-width: 540px; margin: 0 auto;
         }
 
-        /* ---- JOURNEY ---- */
+        /* SVG ICON */
+        .icon {
+            width: 32px; height: 32px; margin-bottom: 14px;
+            color: #3b82f6;
+        }
+
+        /* JOURNEY */
         .journey-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            position: relative;
-            max-width: 640px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: 1fr; gap: 0;
+            position: relative; max-width: 640px; margin: 0 auto;
         }
         .journey-item {
-            display: flex; gap: 20px; padding: 24px 0;
-            position: relative;
+            display: flex; gap: 20px; padding: 24px 0; position: relative;
         }
         .journey-item::before {
-            content: '';
-            position: absolute; left: 19px; top: 48px; bottom: -24px;
+            content: ''; position: absolute; left: 19px; top: 52px; bottom: -24px;
             width: 2px; background: #1a1a2e;
         }
         .journey-item:last-child::before { display: none; }
         .journey-dot {
-            width: 40px; height: 40px; flex-shrink: 0;
-            border-radius: 50%;
-            background: #111; border: 2px solid #3b82f6;
+            width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+            background: #0a0a0f; border: 2px solid #1a1a2e;
             display: flex; align-items: center; justify-content: center;
-            font-size: 16px; color: #3b82f6; font-weight: 700;
         }
+        .journey-dot svg { width: 18px; height: 18px; color: #3b82f6; }
+        .journey-item.active .journey-dot { border-color: #3b82f6; }
         .journey-content h3 { color: #fff; font-size: 17px; margin-bottom: 4px; }
-        .journey-content p { color: #777; font-size: 14px; margin: 0; }
-        .journey-content .year { color: #3b82f6; font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+        .journey-content p { color: #666; font-size: 14px; margin: 0; line-height: 1.6; }
+        .journey-content .tag {
+            display: inline-block; font-size: 11px; font-weight: 600;
+            color: #555; border: 1px solid #222; border-radius: 4px;
+            padding: 2px 8px; margin-top: 8px; margin-right: 4px;
+        }
 
-        /* ---- FEATURES GRID ---- */
+        /* FEATURES GRID */
         .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
         }
         .feature-card {
-            background: #111118;
-            border: 1px solid #1a1a2e;
-            border-radius: 16px;
+            background: #111118; border: 1px solid #1a1a2e; border-radius: 16px;
             padding: 28px 24px;
             transition: border-color 0.3s, transform 0.3s;
         }
         .feature-card:hover {
-            border-color: rgba(59,130,246,0.3);
-            transform: translateY(-2px);
+            border-color: rgba(59,130,246,0.3); transform: translateY(-2px);
         }
-        .feature-icon {
-            font-size: 28px; margin-bottom: 14px;
-        }
-        .feature-card h3 {
-            color: #fff; font-size: 17px; margin-bottom: 8px;
-        }
-        .feature-card p {
-            color: #777; font-size: 14px; line-height: 1.6; margin: 0;
-        }
+        .feature-card h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+        .feature-card p { color: #666; font-size: 14px; line-height: 1.6; margin: 0; }
 
-        /* ---- HOW IT WORKS ---- */
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
+        /* PAIN POINTS */
+        .pain-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+            max-width: 800px; margin: 0 auto;
         }
+        .pain-card {
+            padding: 28px 24px; position: relative;
+        }
+        .pain-card .pain-label {
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: #f85149; margin-bottom: 10px;
+        }
+        .pain-card .solution-label {
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: #22c55e; margin-bottom: 6px; margin-top: 16px;
+        }
+        .pain-card h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+        .pain-card p { color: #666; font-size: 14px; line-height: 1.6; margin: 0; }
+
+        /* STEPS */
+        .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
         .step {
-            text-align: center;
-            padding: 32px 20px;
-            background: #111118;
-            border: 1px solid #1a1a2e;
-            border-radius: 16px;
+            text-align: center; padding: 32px 20px;
+            background: #111118; border: 1px solid #1a1a2e; border-radius: 16px;
         }
         .step-number {
             width: 48px; height: 48px;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(59,130,246,0.2);
+            background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 20px; font-weight: 700; color: #3b82f6;
             margin: 0 auto 16px;
         }
         .step h3 { color: #fff; font-size: 16px; margin-bottom: 6px; }
-        .step p { color: #777; font-size: 13px; margin: 0; }
+        .step p { color: #666; font-size: 13px; margin: 0; }
 
-        /* ---- CONSILIUM ---- */
+        /* CONSILIUM */
         .consilium-explainer {
-            background: #111118;
-            border: 1px solid #1a1a2e;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 700px;
-            margin: 0 auto;
+            background: #111118; border: 1px solid #1a1a2e; border-radius: 20px;
+            padding: 40px; max-width: 700px; margin: 0 auto;
         }
         .consilium-explainer h3 {
             color: #fff; font-size: 22px; margin-bottom: 16px; text-align: center;
         }
         .consilium-explainer > p {
-            color: #888; font-size: 15px; text-align: center; margin-bottom: 28px;
+            color: #777; font-size: 15px; text-align: center; margin-bottom: 28px;
         }
-        .stakeholders {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+        .stakeholders { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .stakeholder {
-            display: flex; align-items: center; gap: 10px;
+            display: flex; align-items: center; gap: 12px;
             padding: 10px 14px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 10px;
+            background: rgba(255,255,255,0.02); border-radius: 10px;
         }
-        .stakeholder-icon { font-size: 20px; }
+        .stakeholder svg { width: 20px; height: 20px; color: #3b82f6; flex-shrink: 0; }
         .stakeholder-name { color: #ccc; font-size: 14px; font-weight: 500; }
-        .stakeholder-desc { color: #666; font-size: 12px; }
+        .stakeholder-desc { color: #555; font-size: 12px; }
         .consilium-verdict {
             text-align: center; margin-top: 24px;
             padding-top: 20px; border-top: 1px solid #1a1a2e;
         }
-        .consilium-verdict p { color: #888; font-size: 14px; margin-bottom: 8px; }
+        .consilium-verdict p { color: #777; font-size: 14px; margin-bottom: 8px; }
         .verdict-badge {
             display: inline-block;
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.2);
-            color: #22c55e;
-            font-size: 14px; font-weight: 700;
-            padding: 8px 20px;
-            border-radius: 8px;
+            background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+            color: #22c55e; font-size: 14px; font-weight: 700;
+            padding: 8px 20px; border-radius: 8px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
 
-        /* ---- PRICING ---- */
-        .pricing-cards {
-            display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
-        }
+        /* PRICING */
+        .pricing-cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .pricing-card {
-            background: #111118;
-            border: 1px solid #1a1a2e;
-            border-radius: 20px;
-            padding: 36px 28px;
-            width: 300px;
-            position: relative;
+            background: #111118; border: 1px solid #1a1a2e; border-radius: 20px;
+            padding: 36px 28px; width: 300px; position: relative;
             transition: border-color 0.3s, transform 0.3s;
         }
         .pricing-card:hover { transform: translateY(-3px); }
@@ -271,8 +262,7 @@
         .pricing-badge {
             position: absolute; top: -12px; right: 20px;
             background: #3b82f6; color: #fff;
-            font-size: 12px; font-weight: 700;
-            padding: 5px 12px; border-radius: 6px;
+            font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 6px;
         }
         .pricing-card h3 { color: #fff; font-size: 20px; margin-bottom: 4px; }
         .pricing-card .trial { color: #3b82f6; font-size: 13px; margin-bottom: 20px; }
@@ -282,33 +272,33 @@
             list-style: none; margin: 24px 0 0; padding: 0;
             border-top: 1px solid #1a1a2e; padding-top: 20px;
         }
-        .pricing-features li {
-            color: #999; font-size: 14px; padding: 5px 0;
-        }
-        .pricing-features li::before { content: "✓ "; color: #3b82f6; font-weight: 600; }
+        .pricing-features li { color: #888; font-size: 14px; padding: 5px 0; }
+        .pricing-features li::before { content: "-- "; color: #333; }
         .pricing-note {
-            color: #555; font-size: 12px; text-align: center; margin-top: 24px; line-height: 1.8;
+            color: #444; font-size: 12px; text-align: center; margin-top: 24px; line-height: 1.8;
         }
+        .pricing-note a { color: #555; text-decoration: none; }
+        .pricing-note a:hover { color: #888; }
 
-        /* ---- FOOTER ---- */
+        /* FOOTER */
         footer {
-            padding: 48px 0;
-            text-align: center;
-            border-top: 1px solid #1a1a2e;
-            color: #555;
-            font-size: 14px;
+            padding: 48px 0; text-align: center;
+            border-top: 1px solid #1a1a2e; color: #444; font-size: 14px;
         }
-        footer a { color: #888; text-decoration: none; }
+        footer a { color: #666; text-decoration: none; }
         footer a:hover { color: #fff; }
         footer .footer-links { margin-top: 10px; }
         footer .footer-links a { margin: 0 12px; }
 
-        /* ---- RESPONSIVE ---- */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { padding: 120px 0 60px; }
             .hero h1 { font-size: 34px; }
             .hero p { font-size: 16px; }
+            .stats-grid { gap: 24px; }
+            .stat-number { font-size: 28px; }
             .features-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr; }
             .steps { grid-template-columns: 1fr; }
             .stakeholders { grid-template-columns: 1fr; }
             .consilium-explainer { padding: 24px; }
@@ -318,396 +308,473 @@
             nav .links { display: none; }
         }
 
-        /* ---- SCROLL ANIMATIONS ---- */
+        /* ANIMATIONS */
         .fade-up {
             opacity: 0; transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        .fade-up.visible {
-            opacity: 1; transform: translateY(0);
-        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a href="#" class="logo">
-            <img src="icon-256.png" alt="MG"> MG Trading Terminal
+<nav>
+    <a href="#" class="logo">
+        <img src="icon-256.png" alt="MG"> MG Trading Terminal
+    </a>
+    <div class="links">
+        <a href="#features">Features</a>
+        <a href="#brain">Trading Brain</a>
+        <a href="#pricing">Pricing</a>
+        <a href="support.html">Support</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">Generation 30 &middot; 1 year of active development</div>
+        <h1>Not a black box.<br><span>You see everything.</span></h1>
+        <p>Most trading tools hide the logic behind their signals. We show you exactly what drives every decision — which analysts voted, why, and with what confidence.</p>
+        <div class="hero-buttons">
+            <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-appstore" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="156" height="52">
+                    <rect width="120" height="40" rx="6" fill="#000"/>
+                    <rect x="0.5" y="0.5" width="119" height="39" rx="5.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+                    <path d="M24.77 20.3a4.95 4.95 0 012.36-4.15 5.07 5.07 0 00-3.99-2.16c-1.68-.18-3.31 1.01-4.17 1.01-.87 0-2.19-.99-3.61-.96a5.31 5.31 0 00-4.47 2.73c-1.93 3.34-.49 8.27 1.36 10.97.93 1.33 2.02 2.81 3.44 2.76 1.39-.06 1.91-.89 3.59-.89 1.66 0 2.15.89 3.59.86 1.49-.03 2.44-1.34 3.33-2.69a11.05 11.05 0 001.51-3.1 4.78 4.78 0 01-2.93-4.37zM22.04 12.21a4.87 4.87 0 001.12-3.49 4.96 4.96 0 00-3.21 1.66 4.64 4.64 0 00-1.14 3.37 4.12 4.12 0 003.23-1.54z" fill="#fff"/>
+                    <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="7.5" x="36.5" y="15.5">Download on the</text>
+                    <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" x="36.5" y="28.5">App Store</text>
+                </svg>
+            </a>
+            <a href="#features" class="btn-secondary">Learn more &#8595;</a>
+        </div>
+    </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots">
+    <div class="screenshots-inner">
+        <img src="screenshots/01_Markets.png" alt="Markets — real-time crypto futures scanner" loading="lazy">
+        <img src="screenshots/02_SymbolDetail.png" alt="Symbol analysis with Volume Profile and Order Flow" loading="lazy">
+        <img src="screenshots/03_SymbolDetail_Panels.png" alt="Deep analysis panels — Smart Money, Whales, Liquidations" loading="lazy">
+        <img src="screenshots/04_Portfolio.png" alt="Portfolio tracking with Fear & Greed index" loading="lazy">
+        <img src="screenshots/05_Settings.png" alt="Settings — connect Bybit, privacy controls" loading="lazy">
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar fade-up">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">230<span>K</span></div>
+                <div class="stat-label">Lines of Rust</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">119</div>
+                <div class="stat-label">Independent detectors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">400<span>+</span></div>
+                <div class="stat-label">Data points per decision</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2<span>,</span>385</div>
+                <div class="stat-label">Automated tests</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Generations</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="section fade-up" id="who">
+    <div class="container">
+        <div class="section-header">
+            <h2>Sound familiar?</h2>
+            <p>These are real problems we built this app to solve.</p>
+        </div>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-label">The problem</div>
+                <h3>"I don't trust black box signals"</h3>
+                <p>You tried bots, signal channels, copy trading. Lost money because you didn't understand why a trade was opened — or why it failed.</p>
+                <div class="solution-label">How we solve it</div>
+                <p>Every signal shows the full reasoning: which of the 7 analysts voted, in which direction, with what confidence. You decide — with full context.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-label">The problem</div>
+                <h3>"I can't process it all fast enough"</h3>
+                <p>You know about order flow, volume profile, smart money. But by the time you check everything manually, the opportunity is gone.</p>
+                <div class="solution-label">How we solve it</div>
+                <p>119 detectors run in parallel, processing 400+ data points per second. What takes you 15 minutes, the app does in under a second.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-label">The problem</div>
+                <h3>"Serious analysis means sitting at a desk"</h3>
+                <p>Your phone shows price and a chart. Real analysis needs a desktop with multiple monitors. You miss moves because you're not at your computer.</p>
+                <div class="solution-label">How we solve it</div>
+                <p>230,000 lines of Rust compiled natively for iOS. The same engine that runs on desktop — no compromises, no simplified version.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-label">The problem</div>
+                <h3>"I keep making emotional trades"</h3>
+                <p>FOMO entries, panic exits, revenge trading. You know the rules but can't follow them when real money is on the line.</p>
+                <div class="solution-label">How we solve it</div>
+                <p>The consilium only signals when multiple independent analysts agree. No consensus — no signal. Built-in discipline that doesn't care about your emotions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>Built through iteration, not hype</h2>
+            <p>From a Python script to a native iOS terminal. Every version learned from the mistakes of the last one.</p>
+        </div>
+        <div class="journey-grid">
+            <div class="journey-item">
+                <div class="journey-dot">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                </div>
+                <div class="journey-content">
+                    <h3>v1 — v29: Python</h3>
+                    <p>29 generations written in Python. Started with simple indicators, evolved through classic technical analysis, machine learning experiments, statistical models, order flow parsing. Each version taught us what works in theory vs. what survives contact with live markets.</p>
+                    <span class="tag">Python</span><span class="tag">Telegram bot</span><span class="tag">REST polling</span>
+                </div>
+            </div>
+            <div class="journey-item">
+                <div class="journey-dot">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div class="journey-content">
+                    <h3>The Rust Rewrite</h3>
+                    <p>Python couldn't keep up — too slow for real-time orderbook processing, too fragile for 24/7 operation. Rewrote the entire engine in Rust. Faster by orders of magnitude. Memory-safe. Runs for weeks without restarts.</p>
+                    <span class="tag">Rust</span><span class="tag">WebSocket</span><span class="tag">Sub-ms latency</span>
+                </div>
+            </div>
+            <div class="journey-item">
+                <div class="journey-dot">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="journey-content">
+                    <h3>Desktop Terminal</h3>
+                    <p>Electron app with real-time dashboard. Master-worker architecture processing multiple symbols in parallel. Thousands of hours of forward testing. The consilium voting system was born here.</p>
+                    <span class="tag">Electron</span><span class="tag">Multi-symbol</span><span class="tag">IPC</span>
+                </div>
+            </div>
+            <div class="journey-item active">
+                <div class="journey-dot">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div class="journey-content">
+                    <h3>v30: MG Trading Terminal</h3>
+                    <p>The same Rust analysis core, compiled natively for iOS via UniFFI. No wrappers, no bridges, no compromises. The full power of the desktop engine running on your phone. Processing megabytes of market data per second — locally.</p>
+                    <span class="tag">SwiftUI</span><span class="tag">UniFFI</span><span class="tag">100% on-device</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section fade-up" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Every tool earned its place</h2>
+            <p>If a feature didn't improve results in backtesting and forward testing, we removed it. What's left is what actually works.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <h3>Volume Profile</h3>
+                <p>Multi-session institutional support and resistance levels. POC migration tracking, cluster detection, range sweep identification. Validated across 90+ days of live data on BTC, ETH, and SOL.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <h3>Order Flow</h3>
+                <p>Real-time absorption detection, initiative tracking, exhaustion signals, book sweeps, and VWAP bands. Not lagging indicators — actual live market microstructure data.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <h3>Smart Money Detection</h3>
+                <p>Whale activity tracking, large block trade alerts, and market manipulation pattern recognition. Identifies institutional accumulation and distribution before it shows on the chart.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 20l4-4 4 4 4-8 4 4"/></svg>
+                <h3>Liquidation Heatmap</h3>
+                <p>Three-phase liquidation analysis: magnet zones that attract price, sweep detection when fuel is consumed, and cascade absorption when whales step in. Context, not just data points.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <h3>Real-Time Scanner</h3>
+                <p>Every Bybit perpetual future, live. Filter by volume, momentum, funding rate, hot score, or gainers. Find the pairs worth analyzing in seconds, not minutes.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <h3>100% On-Device</h3>
+                <p>Rust core compiled natively. Zero cloud dependencies. API keys in iOS Keychain. No analytics, no tracking, no telemetry. We literally cannot see your data or your trades.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- UNDER THE HOOD -->
+<section class="section fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>What happens when you open a symbol</h2>
+            <p>This is not a simple indicator overlay. Here's what your phone is doing every second.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                <h3>Full Transparency</h3>
+                <p>Every signal shows the reasoning. Which of the 7 stakeholders voted, in which direction, with what confidence. You always understand why — never blindly follow.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <h3>Megabytes of Data Per Second</h3>
+                <p>Orderbook snapshots at 50/200/1000 levels, raw trade stream, 1-minute klines, liquidation events, funding rates, open interest changes — processed in parallel, in real time, on your device.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <h3>Discipline Built In</h3>
+                <p>The system enforces what most traders can't: strict risk management, evidence-based entries, no FOMO trades. It only signals when the consilium reaches consensus.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                <h3>Real Trading Experience</h3>
+                <p>Built by traders who learned through real losses, real drawdowns, real blown accounts. Every rule in the system exists because someone paid the price without it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section fade-up" id="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>Up and running in 2 minutes</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Download</h3>
+                <p>Install from App Store. Start your free trial.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Explore Markets</h3>
+                <p>All analysis works instantly — no account needed. Connect Bybit only if you want to trade directly from the app.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Analyze</h3>
+                <p>Dive into any symbol. The Trading Brain will show you what it sees and why.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONSILIUM -->
+<section class="section fade-up" id="brain">
+    <div class="container">
+        <div class="section-header">
+            <h2>7 analysts. 1 verdict.</h2>
+            <p>The Consilium is our decision engine. Like a board of directors where each member has different expertise and they vote independently on every opportunity.</p>
+        </div>
+        <div class="consilium-explainer">
+            <h3>Meet the Consilium</h3>
+            <p>No single indicator dominates. Every signal requires consensus.</p>
+            <div class="stakeholders">
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Order Flow</div>
+                        <div class="stakeholder-desc">Absorption, initiative, exhaustion</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Whales</div>
+                        <div class="stakeholder-desc">Smart money, block trades</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Tech Analysis</div>
+                        <div class="stakeholder-desc">Volume Profile, structure</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Crowd Psychology</div>
+                        <div class="stakeholder-desc">Sentiment, fear & greed</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Market Makers</div>
+                        <div class="stakeholder-desc">Spread, depth, manipulation</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Retail</div>
+                        <div class="stakeholder-desc">Crowd positioning & fading</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 20l4-4 4 4 4-8 4 4"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Liquidations</div>
+                        <div class="stakeholder-desc">Heatmap, sweeps, cascades</div>
+                    </div>
+                </div>
+                <div class="stakeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                        <div class="stakeholder-name">Risk Assessor</div>
+                        <div class="stakeholder-desc">Position sizing & exposure</div>
+                    </div>
+                </div>
+            </div>
+            <div class="consilium-verdict">
+                <p>When enough stakeholders agree with high confidence:</p>
+                <div class="verdict-badge">LONG BTCUSDT &mdash; confidence: 0.72</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY SUBSCRIBE -->
+<section class="section fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why a subscription?</h2>
+            <p>Markets evolve constantly. The algorithms need to keep up — and that takes ongoing work.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                <h3>Continuous Improvement</h3>
+                <p>New strategies, refined detection methods, better risk models. We ship updates based on live forward testing — not theoretical backtests.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                <h3>Ongoing Research</h3>
+                <p>Walk-forward validation, regime analysis, parameter optimization. 30 generations of learning and we're still finding ways to make it better.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <h3>New Features</h3>
+                <p>More exchanges, deeper analysis tools, new detection methods. Your subscription funds the development of what comes next.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                <h3>Infrastructure</h3>
+                <p>Real-time data feeds, API integrations, exchange protocol changes, Apple developer program. Keeping it all running reliably takes resources.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section fade-up" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2>Start with a free trial</h2>
+            <p>Try everything. Cancel anytime.</p>
+        </div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Monthly</h3>
+                <p class="trial">1 week free trial</p>
+                <span class="price">$49.99</span>
+                <span class="period"> /month</span>
+                <ul class="pricing-features">
+                    <li>All analysis tools</li>
+                    <li>Real-time Trading Brain</li>
+                    <li>Portfolio tracking</li>
+                    <li>Weekly updates</li>
+                    <li>Cancel anytime</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">SAVE 33%</div>
+                <h3>Yearly</h3>
+                <p class="trial">1 month free trial</p>
+                <span class="price">$399.99</span>
+                <span class="period"> /year</span>
+                <ul class="pricing-features">
+                    <li>All analysis tools</li>
+                    <li>Real-time Trading Brain</li>
+                    <li>Portfolio tracking</li>
+                    <li>Weekly updates</li>
+                    <li>Cancel anytime</li>
+                </ul>
+            </div>
+        </div>
+        <p class="pricing-note">
+            Subscription auto-renews unless cancelled at least 24 hours before the end of the current period.<br>
+            Manage in Settings &gt; Apple ID &gt; Subscriptions. <a href="terms.html">Terms</a> &middot; <a href="privacy-policy.html">Privacy</a>
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align: center; padding-bottom: 100px;">
+    <div class="container">
+        <h2 style="font-size: 32px; color: #fff; margin-bottom: 16px;">See what's behind the candles</h2>
+        <p style="color: #666; font-size: 17px; margin-bottom: 32px;">Download and start your free trial.</p>
+        <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-appstore" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="156" height="52">
+                <rect width="120" height="40" rx="6" fill="#000"/>
+                <rect x="0.5" y="0.5" width="119" height="39" rx="5.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+                <path d="M24.77 20.3a4.95 4.95 0 012.36-4.15 5.07 5.07 0 00-3.99-2.16c-1.68-.18-3.31 1.01-4.17 1.01-.87 0-2.19-.99-3.61-.96a5.31 5.31 0 00-4.47 2.73c-1.93 3.34-.49 8.27 1.36 10.97.93 1.33 2.02 2.81 3.44 2.76 1.39-.06 1.91-.89 3.59-.89 1.66 0 2.15.89 3.59.86 1.49-.03 2.44-1.34 3.33-2.69a11.05 11.05 0 001.51-3.1 4.78 4.78 0 01-2.93-4.37zM22.04 12.21a4.87 4.87 0 001.12-3.49 4.96 4.96 0 00-3.21 1.66 4.64 4.64 0 00-1.14 3.37 4.12 4.12 0 003.23-1.54z" fill="#fff"/>
+                <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="7.5" x="36.5" y="15.5">Download on the</text>
+                <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" x="36.5" y="28.5">App Store</text>
+            </svg>
         </a>
-        <div class="links">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#brain">Trading Brain</a>
-            <a href="#pricing">Pricing</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 MG Trading Terminal. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
             <a href="support.html">Support</a>
         </div>
-    </nav>
+    </div>
+</footer>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">30th generation &middot; 1 year of R&amp;D</div>
-            <h1>Not a black box.<br><span>You see everything.</span></h1>
-            <p>Most trading tools hide the logic behind signals. We show you exactly why, how, and what drives every decision. Full transparency. Full understanding. Full control.</p>
-            <div class="hero-buttons">
-                <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-primary" target="_blank" rel="noopener">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:40px;">
-                </a>
-                <a href="#features" class="btn-secondary">Learn more ↓</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCREENSHOTS -->
-    <section class="screenshots">
-        <div class="screenshots-inner">
-            <img src="screenshots/01_Markets.png" alt="Markets — real-time crypto futures scanner" loading="lazy">
-            <img src="screenshots/02_SymbolDetail.png" alt="Symbol analysis with Volume Profile and Order Flow" loading="lazy">
-            <img src="screenshots/03_SymbolDetail_Panels.png" alt="Deep analysis panels — Smart Money, Whales, Liquidations" loading="lazy">
-            <img src="screenshots/04_Portfolio.png" alt="Portfolio tracking with Fear & Greed index" loading="lazy">
-            <img src="screenshots/05_Settings.png" alt="Settings — connect Bybit, privacy controls" loading="lazy">
-        </div>
-    </section>
-
-    <!-- JOURNEY -->
-    <section class="section fade-up">
-        <div class="container">
-            <div class="section-header">
-                <h2>Built through iteration</h2>
-                <p>30 generations of improvements. Every loss taught us something. Every backtest made it better.</p>
-            </div>
-            <div class="journey-grid">
-                <div class="journey-item">
-                    <div class="journey-dot">1</div>
-                    <div class="journey-content">
-                        <div class="year">Where it started</div>
-                        <h3>Telegram Signal Bot</h3>
-                        <p>Simple alerts based on a few indicators. Good start, but we wanted more control and transparency.</p>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-dot">2</div>
-                    <div class="journey-content">
-                        <div class="year">The research phase</div>
-                        <h3>Millions of Backtests</h3>
-                        <p>We tested every signal, every parameter, every edge case. Walk-forward validation across BTC, ETH, SOL. Discarded what didn't work.</p>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-dot">3</div>
-                    <div class="journey-content">
-                        <div class="year">The architecture</div>
-                        <h3>Consilium — The Trading Brain</h3>
-                        <p>7 independent analysts that vote on every opportunity. No single point of failure. The consilium only acts when there's consensus.</p>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-dot">4</div>
-                    <div class="journey-content">
-                        <div class="year">Today</div>
-                        <h3>MG Trading Terminal</h3>
-                        <p>A native iPhone app with the full power of our Rust analysis engine. Institutional-grade tools in your pocket. And we're still improving every week.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section fade-up" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything you need, nothing you don't</h2>
-                <p>Each tool earned its place through rigorous testing. If it didn't improve results, we removed it.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Volume Profile</h3>
-                    <p>Multi-session institutional support/resistance levels. POC migration, cluster detection, range sweeps — all validated on 90+ days of real data.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌊</div>
-                    <h3>Order Flow Analysis</h3>
-                    <p>Real-time absorption detection, initiative flow, exhaustion signals, book sweeps, and VWAP mean-reversion bands. See what's happening behind the candles.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🐋</div>
-                    <h3>Smart Money Detection</h3>
-                    <p>Track whale activity, large block trades, and market manipulation patterns. Know when the big players are moving before the crowd catches on.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔥</div>
-                    <h3>Liquidation Heatmap</h3>
-                    <p>Phase-aware liquidation analysis. Detects magnet zones, sweep phases, and cascade absorptions — not just where liquidations are, but what they mean.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Real-Time Market Scanner</h3>
-                    <p>All Bybit perpetual futures at a glance. Filter by volume, momentum, funding rate, hot score. Find the best setups in seconds.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% On-Device</h3>
-                    <p>Native Rust core. Zero cloud dependencies. Your API keys stay in iOS Keychain. No analytics, no tracking. We literally can't see your data.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section fade-up" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>Up and running in 2 minutes</h2>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Download</h3>
-                    <p>Install from App Store. Start your free trial — no credit card needed upfront.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Explore Markets</h3>
-                    <p>All analysis works instantly — no account needed. Connect Bybit only if you want to trade directly from the app.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Analyze & Trade</h3>
-                    <p>Browse markets, dive into symbol analysis, and let the Trading Brain highlight the best opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONSILIUM / TRADING BRAIN -->
-    <section class="section fade-up" id="brain">
-        <div class="container">
-            <div class="section-header">
-                <h2>7 analysts. 1 verdict.</h2>
-                <p>The Consilium is our decision engine. Like a board of directors — each stakeholder has their expertise, and they vote independently.</p>
-            </div>
-            <div class="consilium-explainer">
-                <h3>Meet the Consilium</h3>
-                <p>Every opportunity is evaluated by all stakeholders simultaneously. No single indicator can dominate the decision.</p>
-                <div class="stakeholders">
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🌊</span>
-                        <div>
-                            <div class="stakeholder-name">Order Flow</div>
-                            <div class="stakeholder-desc">Absorption, initiative, exhaustion</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🐋</span>
-                        <div>
-                            <div class="stakeholder-name">Whales</div>
-                            <div class="stakeholder-desc">Smart money & big trades</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">📊</span>
-                        <div>
-                            <div class="stakeholder-name">Tech Analysis</div>
-                            <div class="stakeholder-desc">Volume Profile, market structure</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">👥</span>
-                        <div>
-                            <div class="stakeholder-name">Crowd Psychology</div>
-                            <div class="stakeholder-desc">Sentiment, fear & greed</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🏪</span>
-                        <div>
-                            <div class="stakeholder-name">Market Makers</div>
-                            <div class="stakeholder-desc">Spread, depth, manipulation</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🛒</span>
-                        <div>
-                            <div class="stakeholder-name">Retail</div>
-                            <div class="stakeholder-desc">Crowd positioning & fading</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🔥</span>
-                        <div>
-                            <div class="stakeholder-name">Liquidations</div>
-                            <div class="stakeholder-desc">Heatmap, sweeps, cascades</div>
-                        </div>
-                    </div>
-                    <div class="stakeholder">
-                        <span class="stakeholder-icon">🛡️</span>
-                        <div>
-                            <div class="stakeholder-name">Risk Assessor</div>
-                            <div class="stakeholder-desc">Position sizing & exposure</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="consilium-verdict">
-                    <p>When enough stakeholders agree with high confidence:</p>
-                    <div class="verdict-badge">✦ LONG BTCUSDT — Confidence 0.72</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- UNDER THE HOOD -->
-    <section class="section fade-up">
-        <div class="container">
-            <div class="section-header">
-                <h2>Under the hood</h2>
-                <p>This isn't a simple indicator. Here's what happens every second when you open a symbol.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📡</div>
-                    <h3>Megabytes per second</h3>
-                    <p>Real-time orderbook snapshots, trade streams, kline data, liquidation feeds, funding rates, open interest — all processed simultaneously on your device.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Full Transparency</h3>
-                    <p>Every signal shows you the reasoning. Which stakeholders voted, why, with what confidence. No "trust me bro" — you understand the logic.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Discipline Built In</h3>
-                    <p>The system enforces what traders struggle with: risk management, position sizing, avoiding FOMO. It only acts when the evidence is strong enough.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍💻</div>
-                    <h3>Real Trading Experience</h3>
-                    <p>Built by traders who've been through drawdowns, blown accounts, and learned the hard way. Every rule in the system exists because someone lost money without it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY SUBSCRIBE -->
-    <section class="section fade-up">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why a subscription?</h2>
-                <p>Markets change constantly. Our algorithms need to keep up.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Continuous Improvement</h3>
-                    <p>New strategies, refined signals, better detection methods — we ship updates every week based on live market data and forward testing.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧪</div>
-                    <h3>Ongoing Research</h3>
-                    <p>Backtesting new approaches, validating across market regimes, walk-forward analysis — the R&D never stops.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏗️</div>
-                    <h3>New Features</h3>
-                    <p>More exchanges, more analysis tools, more insights. Your subscription funds the development of features you'll use tomorrow.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Infrastructure</h3>
-                    <p>Market data feeds, API connections, real-time processing — keeping everything fast and reliable costs resources.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="section fade-up" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Start with a free trial</h2>
-                <p>Try everything. No commitment. Cancel anytime.</p>
-            </div>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Monthly</h3>
-                    <p class="trial">1 week free trial</p>
-                    <span class="price">$49.99</span>
-                    <span class="period">/month</span>
-                    <ul class="pricing-features">
-                        <li>All analysis tools</li>
-                        <li>Real-time Trading Brain signals</li>
-                        <li>Portfolio tracking</li>
-                        <li>Weekly updates</li>
-                        <li>Cancel anytime</li>
-                    </ul>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">SAVE 33%</div>
-                    <h3>Yearly</h3>
-                    <p class="trial">1 month free trial</p>
-                    <span class="price">$399.99</span>
-                    <span class="period">/year</span>
-                    <ul class="pricing-features">
-                        <li>All analysis tools</li>
-                        <li>Real-time Trading Brain signals</li>
-                        <li>Portfolio tracking</li>
-                        <li>Weekly updates</li>
-                        <li>Cancel anytime</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="pricing-note">
-                Subscription auto-renews unless cancelled at least 24 hours before the end of the current period.<br>
-                Manage in Settings &gt; Apple ID &gt; Subscriptions. <a href="terms.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="section" style="text-align: center; padding-bottom: 100px;">
-        <div class="container">
-            <h2 style="font-size: 32px; color: #fff; margin-bottom: 16px;">Ready to see what you've been missing?</h2>
-            <p style="color: #888; font-size: 17px; margin-bottom: 32px;">Download now and start your free trial. Your edge is waiting.</p>
-            <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-primary" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Download on App Store
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 MG Trading Terminal. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCROLL ANIMATIONS -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    </script>
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) t.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 </body>
 </html>
