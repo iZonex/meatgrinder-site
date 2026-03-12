@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeatGrinder — Crypto Futures Analysis Terminal</title>
+    <title>MG Trading Terminal — Crypto Futures Analysis</title>
     <link rel="icon" type="image/png" href="icon-256.png">
-    <meta property="og:title" content="MeatGrinder — Crypto Futures Analysis Terminal">
+    <meta property="og:title" content="MG Trading Terminal — Crypto Futures Analysis">
     <meta property="og:description" content="Professional crypto futures analysis. Volume Profile, Order Flow, Smart Money — running natively on your iPhone.">
-    <meta property="og:image" content="icon.png">
+    <meta property="og:image" content="https://izonex.github.io/meatgrinder-site/icon-256.png">
+    <meta property="og:url" content="https://izonex.github.io/meatgrinder-site/">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Professional crypto futures analysis terminal for iPhone. Volume Profile, Order Flow, Smart Money Detection, AI Trading Brain. 100% on-device.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -106,6 +109,84 @@
         }
         .app-store-badge:hover { opacity: 0.8; }
 
+        /* Pricing */
+        .pricing {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .pricing h2 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .pricing .subtitle {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .pricing-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .pricing-card {
+            background: #111118;
+            border: 1px solid #1a1a2e;
+            border-radius: 16px;
+            padding: 32px 28px;
+            width: 280px;
+            text-align: left;
+            position: relative;
+        }
+        .pricing-card.featured {
+            border-color: #3b82f6;
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .pricing-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        .pricing-card .trial {
+            color: #3b82f6;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+        .pricing-card .price {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .pricing-card .period {
+            color: #666;
+            font-size: 14px;
+        }
+        .pricing-card .features-list {
+            list-style: none;
+            margin: 20px 0 0;
+            padding: 0;
+        }
+        .pricing-card .features-list li {
+            color: #999;
+            font-size: 14px;
+            padding: 6px 0;
+        }
+        .pricing-card .features-list li::before {
+            content: "✓ ";
+            color: #3b82f6;
+        }
+
         footer {
             padding: 40px 0;
             text-align: center;
@@ -169,14 +250,47 @@
                     <p>Connect your Bybit account to monitor positions, P&amp;L, and equity in real-time. Fear &amp; Greed sentiment context.</p>
                 </div>
                 <div class="feature">
-                    <h3>MG Pro Subscription</h3>
-                    <p>Start with a free trial. Full access to all analysis tools, real-time signals, and portfolio tracking. Cancel anytime.</p>
+                    <h3>100% Private</h3>
+                    <p>No analytics, no tracking, no servers. Everything runs on your device. Your data stays yours.</p>
                 </div>
             </div>
         </section>
 
+        <section class="pricing">
+            <h2>MG Pro</h2>
+            <p class="subtitle">Full access to all analysis tools. Start with a free trial.</p>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Monthly</h3>
+                    <p class="trial">1 week free trial</p>
+                    <span class="price">$49.99</span>
+                    <span class="period">/month</span>
+                    <ul class="features-list">
+                        <li>All analysis tools</li>
+                        <li>Real-time signals</li>
+                        <li>Portfolio tracking</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">SAVE 33%</div>
+                    <h3>Yearly</h3>
+                    <p class="trial">1 month free trial</p>
+                    <span class="price">$399.99</span>
+                    <span class="period">/year</span>
+                    <ul class="features-list">
+                        <li>All analysis tools</li>
+                        <li>Real-time signals</li>
+                        <li>Portfolio tracking</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="color: #555; font-size: 12px; margin-top: 20px;">Subscription auto-renews unless cancelled at least 24 hours before the end of the current period.<br>Manage in Settings &gt; Apple ID &gt; Subscriptions.</p>
+        </section>
+
         <footer>
-            <p>&copy; 2026 MeatGrinder. All rights reserved.</p>
+            <p>&copy; 2026 MG Trading Terminal. All rights reserved.</p>
             <p style="margin-top: 8px;">
                 <a href="privacy-policy.html">Privacy Policy</a> &middot;
                 <a href="terms.html">Terms of Use</a> &middot;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support — MeatGrinder</title>
+    <title>Support — MG Trading Terminal</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -16,6 +16,7 @@
         h1 { color: #fff; font-size: 32px; margin-bottom: 8px; }
         .subtitle { color: #666; margin-bottom: 40px; }
         h2 { color: #fff; font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+        h3 { color: #ddd; font-size: 17px; margin-top: 24px; margin-bottom: 8px; }
         p { margin-bottom: 16px; color: #999; }
         a { color: #3b82f6; text-decoration: none; }
         a:hover { color: #60a5fa; }
@@ -28,27 +29,71 @@
             margin-top: 24px;
         }
         .contact-box p { margin-bottom: 8px; }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #1a1a2e;
+            margin: 40px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back">&larr; Back to MeatGrinder</a>
+        <a href="index.html" class="back">&larr; Back to MG Trading Terminal</a>
         <h1>Support</h1>
-        <p class="subtitle">Need help with MeatGrinder? We're here to assist.</p>
+        <p class="subtitle">Need help with MG Trading Terminal? We're here to assist.</p>
 
-        <h2>Common Questions</h2>
+        <h2>Getting Started</h2>
 
-        <h2>How do I connect my Bybit account?</h2>
+        <h3>How do I connect my Bybit account?</h3>
         <p>Go to Settings &rarr; Connect Bybit. Enter your API Key and Secret. Make sure your API key has "Read" and "Trade" permissions enabled on Bybit. We recommend creating a dedicated API key with IP restriction for maximum security.</p>
 
-        <h2>Is my data safe?</h2>
+        <h3>What exchanges are supported?</h3>
+        <p>Currently, MG Trading Terminal supports Bybit USDT Perpetual Futures. More exchanges may be added in future updates.</p>
+
+        <h3>The app shows "Not configured"</h3>
+        <p>This means no Bybit API keys are connected. Market data (prices, analysis) works without API keys. Portfolio and trading features require a connected account.</p>
+
+        <h3>Is my data safe?</h3>
         <p>Yes. Your API keys are stored in the iOS Keychain (hardware-encrypted). All analysis runs on your device. Nothing is sent to our servers — we don't have any. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
 
-        <h2>What exchanges are supported?</h2>
-        <p>Currently, MeatGrinder supports Bybit USDT Perpetual Futures. More exchanges may be added in future updates.</p>
+        <hr class="section-divider">
 
-        <h2>The app shows "Not configured"</h2>
-        <p>This means no Bybit API keys are connected. Market data (prices, analysis) works without API keys. Portfolio and trading features require a connected account.</p>
+        <h2>Subscription &amp; Billing</h2>
+
+        <h3>What plans are available?</h3>
+        <p><strong>MG Pro Monthly</strong> — $49.99/month with a 1-week free trial.<br>
+        <strong>MG Pro Yearly</strong> — $399.99/year with a 1-month free trial (save 33%).</p>
+
+        <h3>How does the free trial work?</h3>
+        <p>When you subscribe, you get a free trial period (1 week for Monthly, 1 month for Yearly). You won't be charged until the trial ends. If you cancel before the trial expires, you won't be charged at all.</p>
+
+        <h3>How do I cancel my subscription?</h3>
+        <p>Open your device <strong>Settings &rarr; Apple ID &rarr; Subscriptions</strong>, find MG Trading Terminal, and tap "Cancel Subscription". You must cancel at least 24 hours before the end of the current billing period to avoid the next charge. You'll continue to have access until the end of the paid period.</p>
+
+        <h3>How do I get a refund?</h3>
+        <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in with your Apple ID, and select the subscription purchase you'd like to be refunded for.</p>
+
+        <h3>I subscribed but the app still shows the paywall</h3>
+        <p>Try these steps:</p>
+        <p>1. Close and reopen the app.<br>
+        2. Tap "Restore Purchase" on the paywall screen.<br>
+        3. Make sure you're signed into the same Apple ID that was used for the purchase.<br>
+        4. Check your subscription status in Settings &rarr; Apple ID &rarr; Subscriptions.</p>
+
+        <h3>Can I share my subscription with family?</h3>
+        <p>Family Sharing is not currently supported for MG Pro subscriptions.</p>
+
+        <hr class="section-divider">
+
+        <h2>Troubleshooting</h2>
+
+        <h3>The app is showing stale or no data</h3>
+        <p>Check your internet connection. The app requires a stable connection to Bybit and Binance APIs for real-time data. If the issue persists, try closing and reopening the app.</p>
+
+        <h3>Analysis seems incorrect or outdated</h3>
+        <p>All analysis is based on real-time market data. Make sure you have a stable internet connection. The app may need a few seconds to load full data after opening a symbol.</p>
+
+        <hr class="section-divider">
 
         <h2>Contact</h2>
         <div class="contact-box">
