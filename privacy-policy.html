@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — MeatGrinder</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0a0a0f;
+            color: #ccc;
+            line-height: 1.8;
+        }
+        .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
+        h1 { color: #fff; font-size: 32px; margin-bottom: 8px; }
+        .updated { color: #666; font-size: 14px; margin-bottom: 40px; }
+        h2 { color: #fff; font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+        p { margin-bottom: 16px; color: #999; }
+        ul { margin: 0 0 16px 24px; color: #999; }
+        li { margin-bottom: 8px; }
+        a { color: #3b82f6; text-decoration: none; }
+        a:hover { color: #60a5fa; }
+        .back { display: inline-block; margin-bottom: 32px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">&larr; Back to MeatGrinder</a>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: March 12, 2026</p>
+
+        <h2>Overview</h2>
+        <p>MeatGrinder ("the App") is a crypto futures analysis terminal developed by Dmytro Chystiakov. Your privacy is important to us. This policy explains what data the App collects, how it is used, and your rights.</p>
+
+        <h2>Data Collection</h2>
+        <p><strong>We do not collect, store, or transmit any personal data to our servers.</strong> The App has no backend servers, no analytics, and no tracking.</p>
+
+        <h2>Data Stored on Your Device</h2>
+        <p>The following data is stored locally on your device only:</p>
+        <ul>
+            <li><strong>API Keys</strong> — Your Bybit API credentials are stored in the iOS Keychain (hardware-encrypted secure storage). They are used solely to communicate directly with the Bybit exchange API.</li>
+            <li><strong>App Settings</strong> — Your preferences (display settings, risk parameters) are stored locally using standard iOS storage.</li>
+        </ul>
+        <p>This data never leaves your device and is not accessible to us or any third party.</p>
+
+        <h2>Network Communication</h2>
+        <p>The App communicates directly with:</p>
+        <ul>
+            <li><strong>Bybit API</strong> (api.bybit.com) — to fetch market data, account information, and execute trades on your behalf using your API keys.</li>
+            <li><strong>Binance API</strong> (fapi.binance.com) — to fetch supplementary market data (klines with taker volume) for analysis purposes only. No authentication or personal data is sent.</li>
+            <li><strong>Alternative.me API</strong> — to fetch the Fear &amp; Greed Index. No personal data is sent.</li>
+        </ul>
+        <p>All network communication uses encrypted HTTPS/WSS connections. No data is routed through our servers.</p>
+
+        <h2>Third-Party Services</h2>
+        <p>The App does not integrate any third-party analytics, advertising, or tracking SDKs. There are no cookies, no fingerprinting, and no user profiling.</p>
+
+        <h2>Data Sharing</h2>
+        <p>We do not share, sell, or transfer any user data to third parties. We have no access to your data.</p>
+
+        <h2>Data Deletion</h2>
+        <p>All data is stored locally on your device. To delete all App data:</p>
+        <ul>
+            <li>Delete the App from your device — this removes all stored settings and Keychain entries.</li>
+            <li>Alternatively, use the "Disconnect" option in Settings to remove your API keys.</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>The App is not intended for use by children under 17. We do not knowingly collect data from children.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:dlchistyakov@gmail.com">dlchistyakov@gmail.com</a>.</p>
+    </div>
+</body>
+</html>
