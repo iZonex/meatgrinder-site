@@ -56,17 +56,23 @@
             background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
             pointer-events: none;
         }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(59,130,246,0.2);
-            color: #3b82f6; font-size: 13px; font-weight: 600;
-            padding: 6px 16px; border-radius: 20px;
-            margin-bottom: 24px;
+        .hero-icon {
+            margin-bottom: 20px;
+        }
+        .hero-icon img {
+            width: 96px; height: 96px; border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(59,130,246,0.15), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+        .hero-appname {
+            font-size: 22px; font-weight: 700; color: #fff;
+            margin-bottom: 4px; letter-spacing: -0.01em;
+        }
+        .hero-tagline {
+            font-size: 14px; color: #555; margin-bottom: 36px;
         }
         .hero h1 {
-            font-size: 52px; font-weight: 800; color: #fff;
-            line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em;
+            font-size: 46px; font-weight: 800; color: #fff;
+            line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.02em;
         }
         .hero h1 span { color: #3b82f6; }
         .hero p {
@@ -293,7 +299,8 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { padding: 120px 0 60px; }
-            .hero h1 { font-size: 34px; }
+            .hero h1 { font-size: 28px; }
+            .hero-icon img { width: 80px; height: 80px; border-radius: 18px; }
             .hero p { font-size: 16px; }
             .stats-grid { gap: 24px; }
             .stat-number { font-size: 28px; }
@@ -333,9 +340,13 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <div class="hero-badge">Generation 30 &middot; 1 year of active development</div>
-        <h1>Not a black box.<br><span>You see everything.</span></h1>
-        <p>Most trading tools hide the logic behind their signals. We show you exactly what drives every decision — which analysts voted, why, and with what confidence.</p>
+        <div class="hero-icon">
+            <img src="icon-256.png" alt="MG Trading Terminal">
+        </div>
+        <div class="hero-appname">MG Trading Terminal</div>
+        <div class="hero-tagline">Crypto Futures Analysis for iPhone</div>
+        <h1>You can't process<br>400+ data points per second.<br><span>Your phone can.</span></h1>
+        <p>119 independent detectors analyze order flow, volume profile, smart money, and liquidations in real time. You see every signal, every vote, every reason — not a black box.</p>
         <div class="hero-buttons">
             <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-appstore" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="156" height="52">
