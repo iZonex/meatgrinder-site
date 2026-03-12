@@ -48,6 +48,7 @@
             padding: 140px 0 80px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
         .hero::before {
             content: '';
@@ -87,7 +88,7 @@
             text-decoration: none;
         }
         .btn-appstore:hover { opacity: 0.85; transform: translateY(-1px); }
-        .btn-appstore svg { height: 48px; width: auto; }
+        .btn-appstore img { height: 48px; width: auto; }
         .btn-secondary {
             color: #888; font-size: 15px; text-decoration: none; transition: color 0.2s;
         }
@@ -299,6 +300,7 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { padding: 110px 0 50px; }
+            .hero::before { width: 100%; }
             .hero h1 { font-size: 26px; line-height: 1.25; }
             .hero-icon img { width: 72px; height: 72px; border-radius: 16px; }
             .hero-icon { margin-bottom: 16px; }
@@ -306,7 +308,7 @@
             .hero-tagline { font-size: 13px; margin-bottom: 24px; }
             .hero p { font-size: 15px; margin-bottom: 24px; }
             .hero-buttons { gap: 12px; }
-            .btn-appstore svg { height: 44px; width: auto; }
+            .btn-appstore img { height: 44px; width: auto; }
             .stats-bar { padding: 28px 0; }
             .stats-grid { gap: 16px 32px; }
             .stat-number { font-size: 26px; }
@@ -382,13 +384,7 @@
         <p>119 independent detectors analyze order flow, volume profile, smart money, and liquidations in real time. You see every signal, every vote, every reason — not a black box.</p>
         <div class="hero-buttons">
             <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-appstore" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="156" height="52">
-                    <rect width="120" height="40" rx="6" fill="#000"/>
-                    <rect x="0.5" y="0.5" width="119" height="39" rx="5.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
-                    <path d="M24.77 20.3a4.95 4.95 0 012.36-4.15 5.07 5.07 0 00-3.99-2.16c-1.68-.18-3.31 1.01-4.17 1.01-.87 0-2.19-.99-3.61-.96a5.31 5.31 0 00-4.47 2.73c-1.93 3.34-.49 8.27 1.36 10.97.93 1.33 2.02 2.81 3.44 2.76 1.39-.06 1.91-.89 3.59-.89 1.66 0 2.15.89 3.59.86 1.49-.03 2.44-1.34 3.33-2.69a11.05 11.05 0 001.51-3.1 4.78 4.78 0 01-2.93-4.37zM22.04 12.21a4.87 4.87 0 001.12-3.49 4.96 4.96 0 00-3.21 1.66 4.64 4.64 0 00-1.14 3.37 4.12 4.12 0 003.23-1.54z" fill="#fff"/>
-                    <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="7.5" x="36.5" y="15.5">Download on the</text>
-                    <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" x="36.5" y="28.5">App Store</text>
-                </svg>
+                <img src="download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
             <a href="#features" class="btn-secondary">Learn more &#8595;</a>
         </div>
@@ -739,7 +735,7 @@
     <div class="container">
         <div class="section-header">
             <h2>Start with a free trial</h2>
-            <p>Try everything. Cancel anytime.</p>
+            <p>Try everything. Cancel anytime. If the app helps you trade better, the subscription pays for itself with a single good trade.</p>
         </div>
         <div class="pricing-cards">
             <div class="pricing-card">
@@ -783,13 +779,7 @@
         <h2 style="font-size: 32px; color: #fff; margin-bottom: 16px;">See what's behind the candles</h2>
         <p style="color: #666; font-size: 17px; margin-bottom: 32px;">Download and start your free trial.</p>
         <a href="https://apps.apple.com/app/mg-trading-terminal/id6742592790" class="btn-appstore" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="156" height="52">
-                <rect width="120" height="40" rx="6" fill="#000"/>
-                <rect x="0.5" y="0.5" width="119" height="39" rx="5.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
-                <path d="M24.77 20.3a4.95 4.95 0 012.36-4.15 5.07 5.07 0 00-3.99-2.16c-1.68-.18-3.31 1.01-4.17 1.01-.87 0-2.19-.99-3.61-.96a5.31 5.31 0 00-4.47 2.73c-1.93 3.34-.49 8.27 1.36 10.97.93 1.33 2.02 2.81 3.44 2.76 1.39-.06 1.91-.89 3.59-.89 1.66 0 2.15.89 3.59.86 1.49-.03 2.44-1.34 3.33-2.69a11.05 11.05 0 001.51-3.1 4.78 4.78 0 01-2.93-4.37zM22.04 12.21a4.87 4.87 0 001.12-3.49 4.96 4.96 0 00-3.21 1.66 4.64 4.64 0 00-1.14 3.37 4.12 4.12 0 003.23-1.54z" fill="#fff"/>
-                <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="7.5" x="36.5" y="15.5">Download on the</text>
-                <text fill="#fff" font-family="-apple-system, SF Pro Text, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" x="36.5" y="28.5">App Store</text>
-            </svg>
+            <img src="download-on-the-app-store.svg" alt="Download on the App Store">
         </a>
     </div>
 </section>
