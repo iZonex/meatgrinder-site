@@ -298,21 +298,54 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero { padding: 120px 0 60px; }
-            .hero h1 { font-size: 28px; }
-            .hero-icon img { width: 80px; height: 80px; border-radius: 18px; }
-            .hero p { font-size: 16px; }
-            .stats-grid { gap: 24px; }
-            .stat-number { font-size: 28px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .pain-grid { grid-template-columns: 1fr; }
-            .steps { grid-template-columns: 1fr; }
+            .hero { padding: 110px 0 50px; }
+            .hero h1 { font-size: 26px; line-height: 1.25; }
+            .hero-icon img { width: 72px; height: 72px; border-radius: 16px; }
+            .hero-icon { margin-bottom: 16px; }
+            .hero-appname { font-size: 18px; }
+            .hero-tagline { font-size: 13px; margin-bottom: 24px; }
+            .hero p { font-size: 15px; margin-bottom: 24px; }
+            .hero-buttons { gap: 12px; }
+            .btn-appstore svg { height: 44px; width: auto; }
+            .stats-bar { padding: 28px 0; }
+            .stats-grid { gap: 16px 32px; }
+            .stat-number { font-size: 26px; }
+            .stat-label { font-size: 12px; }
+            .section { padding: 60px 0; }
+            .section-header { margin-bottom: 32px; }
+            .section-header h2 { font-size: 26px; }
+            .section-header p { font-size: 15px; }
+            .features-grid { grid-template-columns: 1fr; gap: 14px; }
+            .feature-card { padding: 22px 20px; }
+            .feature-card h3 { font-size: 16px; }
+            .feature-card p { font-size: 13px; }
+            .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+            .pain-card h3 { font-size: 16px; }
+            .pain-card p { font-size: 13px; }
+            .steps { grid-template-columns: 1fr; gap: 14px; }
+            .step { padding: 24px 16px; }
             .stakeholders { grid-template-columns: 1fr; }
-            .consilium-explainer { padding: 24px; }
-            .screenshots-inner { justify-content: flex-start; }
-            .screenshots img { height: 420px; }
-            .section-header h2 { font-size: 28px; }
+            .consilium-explainer { padding: 22px 18px; }
+            .consilium-explainer h3 { font-size: 19px; }
+            .pricing-cards { gap: 16px; }
+            .pricing-card { width: 100%; padding: 28px 22px; }
+            .screenshots-inner { justify-content: flex-start; padding: 0 16px; }
+            .screenshots img { height: 400px; }
             nav .links { display: none; }
+            nav { padding: 10px 16px; }
+            nav .logo { font-size: 16px; }
+            nav .logo img { width: 32px; height: 32px; border-radius: 8px; }
+            .container { padding: 0 16px; }
+            footer { padding: 36px 0; font-size: 13px; }
+        }
+
+        @media (max-width: 390px) {
+            .hero h1 { font-size: 23px; }
+            .hero-icon img { width: 64px; height: 64px; border-radius: 14px; }
+            .hero-appname { font-size: 17px; }
+            .stat-number { font-size: 22px; }
+            .stats-grid { gap: 12px 24px; }
+            .screenshots img { height: 340px; }
         }
 
         /* ANIMATIONS */
